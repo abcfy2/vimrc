@@ -40,6 +40,11 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 "}
 
+
+"jedi-vim{
+let g:jedi#use_splits_not_buffers = "left"
+"}
+
 "pathogen{
 call pathogen#infect()
 "}

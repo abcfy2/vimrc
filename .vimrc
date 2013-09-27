@@ -1,9 +1,63 @@
+" Bundle settings
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle..."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let iCanHazVundle=0
+endif
+"vundle设置{{
+ set nocompatible               " be iMproved
+ filetype off                   " required!
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'majutsushi/tagbar'
+ "帮助文档：https://github.com/majutsushi/tagbar
+Bundle 'rkulla/pydiction'
+ "帮助文档：https://github.com/rkulla/pydiction
+Bundle 'ervandew/supertab'
+ "帮助文档：https://github.com/ervandew/supertab
+Bundle "vim-scripts/AutoComplPop"
+ "帮助文档：https://github.com/vim-scripts/AutoComplPop
+Bundle "scrooloose/nerdcommenter"
+ "帮助文档：https://github.com/scrooloose/nerdcommenter
+Bundle "scrooloose/nerdtree"
+ "帮助文档：https://github.com/scrooloose/nerdtree
+Bundle "jistr/vim-nerdtree-tabs"
+ "帮助文档：https://github.com/jistr/vim-nerdtree-tabs
+Bundle "mattn/emmet-vim"
+ "帮助文档：https://github.com/mattn/emmet-vim
+
+
+filetype on
+filetype plugin indent on     " required!
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
+ " NOTE: comments after Bundle command are not allowed..
+
+if iCanHazVundle == 0
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :BundleInstall
+endif
+"}}
+
+"common conf {{
 syn on  "高亮语法
+set mouse=a "打开鼠标操作功能
 set incsearch  "搜索时逐字符高亮
 set noexpandtab "不要用空格代替制表符
 colorscheme desert "配色主题
-
-"common conf {{
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set ai
@@ -19,17 +73,25 @@ set number
 set autoread
 set ignorecase
 set autoindent "自动缩进
-set fileencoding=utf-8
+set smartindent "智能缩进
 set hls "高亮所有搜索匹配到的结果
 set foldmethod=syntax
-"补全设置，不设也能用
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
+set foldlevel=99
 filetype plugin indent on
-filetype plugin on
-set ofu=syntaxcomplete#Complete
-let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的  
-let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim  
-let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口   
+set ruler
+set showcmd
+set tags=tags;/
+"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+set completeopt+=longest
+ "离开插入模式后自动关闭预览窗口
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+ "回车即选中当前项
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+ "上下左右键的行为
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "<PageUp>"
 "}}
 
 "conf for plugins {{
@@ -40,12 +102,44 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 "}
 
-
-"jedi-vim{
-let g:jedi#use_splits_not_buffers = "left"
-"}
-
 "pathogen{
 call pathogen#infect()
 "}
+
+"pydiction{{
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 "}}
+
+"tagbar{
+"映射F4为:TagbarToggle
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_ctags_bin = 'ctags'
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+let g:tagbar_width = 40
+"}
+"}}
+
+"AutoComplPop{
+let g:acp_completeoptPreview = 1
+"}
+
+"NERDTree{
+map <C-l> :tabn<cr>             
+"下一个tab
+map <C-h> :tabp<cr>             
+"上一个tab
+map <C-n> :tabnew<cr>           
+"新tab
+map <C-k> :bn<cr>               
+"下一个文件
+map <C-j> :bp<cr>               
+"上一个文件
+"}
+
+"NERDTree-Tabs{
+let g:nerdtree_tabs_open_on_console_startup=1       
+"设置打开vim的时候默认打开目录树
+map <F3> <plug>NERDTreeTabsToggle <CR>         
+"设置打开目录树的快捷键
+autocmd vimenter * if !argc() | NERDTree | endif
+"}

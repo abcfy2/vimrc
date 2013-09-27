@@ -102,10 +102,6 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 "}
 
-"pathogen{
-call pathogen#infect()
-"}
-
 "pydiction{{
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 "}}

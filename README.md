@@ -18,7 +18,7 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 
 关于ctags的使用说明可以参考这个，实现代码索引跳转http://smilejay.com/2012/10/vim-for-linux-programmer/
 
-在任意目录下克隆本项目
+**使用：**在任意目录下克隆本项目
 
     git clone https://github.com/abcfy2/vimrc.git
     cd vimrc
@@ -28,7 +28,7 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 
 如果不存在`~/.vim/bundle/vundle/README.md`这个目录，则会自动克隆vundle插件，然后自动安装所需插件。
 
-以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。
+**更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。
 
 
 使用的插件

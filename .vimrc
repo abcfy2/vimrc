@@ -128,7 +128,7 @@ let g:tagbar_width = 40
 let g:acp_completeoptPreview = 1
 "}
 
-"NERDTree{
+"vim的多标签编辑快捷键映射{
 map <C-l> :tabn<cr>             
 "下一个tab
 map <C-h> :tabp<cr>             
@@ -147,10 +147,9 @@ let g:nerdtree_tabs_open_on_console_startup=1
 map <F3> <plug>NERDTreeTabsToggle <CR>         
 "设置打开目录树的快捷键
 autocmd vimenter * if !argc() | NERDTree | endif
-"只有一个文件时不打开目录树
 "}
 
 "snipmate{
-"映射ctrl+tab为snimate补全
+"映射ctrl+z为snimate补全
 imap <C-z> <Plug>snipMateNextOrTrigger
 "}

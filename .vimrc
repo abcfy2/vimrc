@@ -20,7 +20,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'rkulla/pydiction'
  "帮助文档：https://github.com/rkulla/pydiction
 Bundle 'ervandew/supertab'
- "帮助文档：https://github.com/ervandew/supertab
+" "帮助文档：https://github.com/ervandew/supertab
 Bundle "vim-scripts/AutoComplPop"
  "帮助文档：https://github.com/vim-scripts/AutoComplPop
 Bundle "scrooloose/nerdcommenter"
@@ -31,7 +31,14 @@ Bundle "jistr/vim-nerdtree-tabs"
  "帮助文档：https://github.com/jistr/vim-nerdtree-tabs
 Bundle "mattn/emmet-vim"
  "帮助文档：https://github.com/mattn/emmet-vim
-
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+ "帮助文档：https://github.com/honza/vim-snippets
+Bundle "kevinw/pyflakes-vim"
+ "帮助文档：https://github.com/kevinw/pyflakes-vim
+Bundle "vim-scripts/python_ifold"
 
 filetype on
 filetype plugin indent on     " required!
@@ -76,7 +83,6 @@ set autoindent "自动缩进
 set smartindent "智能缩进
 set hls "高亮所有搜索匹配到的结果
 set foldmethod=syntax
-set foldlevel=99
 filetype plugin indent on
 set ruler
 set showcmd
@@ -138,4 +144,10 @@ let g:nerdtree_tabs_open_on_console_startup=1
 map <F3> <plug>NERDTreeTabsToggle <CR>         
 "设置打开目录树的快捷键
 autocmd vimenter * if !argc() | NERDTree | endif
+"只有一个文件时不打开目录树
+"}
+
+"snipmate{
+"映射ctrl+tab为snimate补全
+imap <C-z> <Plug>snipMateNextOrTrigger
 "}

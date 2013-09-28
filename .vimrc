@@ -39,6 +39,9 @@ Bundle "honza/vim-snippets"
 Bundle "kevinw/pyflakes-vim"
  "帮助文档：https://github.com/kevinw/pyflakes-vim
 Bundle "vim-scripts/python_ifold"
+ "python的折叠插件
+Bundle "sukima/xmledit"
+ "vim的xml编辑插件"
 
 filetype on
 filetype plugin indent on     " required!

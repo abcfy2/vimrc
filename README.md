@@ -26,7 +26,7 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 
 或者可以做软链接，方便以后直接git pull更新生效
 
-如果不存在`~/.vim/bundle/vundle/README.md`这个目录，则会自动克隆vundle插件，然后自动安装所需插件。
+如果不存在``~/.vim/bundle/vundle/README.md``这个目录，则会自动克隆vundle插件，然后自动安装所需插件。
 
 **更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。或者自己比对一下``.vimrc``文件中的``Bundle "xxx/xxx"``的部分与``~/.vim/bundle/``目录下的异同，删掉不再使用的插件，然后在vim的命令模式执行```:BundleInstall```安装新加入的插件接客。
 
@@ -42,6 +42,8 @@ vim-powerline
 一个华丽的vim状态栏，但是需要注意需要给字体打补丁才能显示出一些特殊符号，具体方法参考vim-powerline的github上的wiki。
 或者用我已经上传的字体，在``.font/Terminus Medium for Powerline.otf``。第一次使用在终端下敲命令``fc-cache -fv``强制更新下字体缓存，
 就可以在字体中找到``Terminus Medium for Powerline``这个字体了，设置终端字体为``Terminus Medium for Powerline``即可。
+
+**注意：**如果依旧看不到powerline的特殊字符效果，需要删除powerline的缓存重启vim。在vim的命令模式下执行``PowerlineClearCache``，重启vim，或者手工删除缓存文件``rm ~/.vim/bundle/vim-powerline/*.cache``，之后重启vim。
 
 
 tagbar

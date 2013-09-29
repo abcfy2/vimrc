@@ -20,7 +20,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'rkulla/pydiction'
  "帮助文档：https://github.com/rkulla/pydiction
 Bundle 'ervandew/supertab'
-" "帮助文档：https://github.com/ervandew/supertab
+ "帮助文档：https://github.com/ervandew/supertab
 Bundle "vim-scripts/AutoComplPop"
  "帮助文档：https://github.com/vim-scripts/AutoComplPop
 Bundle "scrooloose/nerdcommenter"
@@ -42,6 +42,7 @@ Bundle "vim-scripts/python_ifold"
  "python的折叠插件
 Bundle "sukima/xmledit"
  "vim的xml编辑插件"
+Bundle "tpope/vim-vividchalk"
 
 filetype on
 filetype plugin indent on     " required!
@@ -67,7 +68,7 @@ syn on  "高亮语法
 set mouse=a "打开鼠标操作功能
 set incsearch  "搜索时逐字符高亮
 set noexpandtab "不要用空格代替制表符
-colorscheme desert "配色主题
+colorscheme vividchalk "配色主题
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set ai
@@ -94,6 +95,8 @@ set tags=tags;/
 set completeopt+=longest
  "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"设置编辑html,htm,css,js等网页文件的时候缩进字符为2个
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
  "回车即选中当前项
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
  "上下左右键的行为

@@ -97,6 +97,10 @@ set completeopt+=longest
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "设置编辑html,htm,css,js等网页文件的时候缩进字符为2个
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
+set completeopt+=longest
+set completeopt+=menu
+set wildmenu
+autocmd FileType python set omnifunc=pythoncomplete#Complete
  "回车即选中当前项
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
  "上下左右键的行为

@@ -28,7 +28,9 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 
 如果不存在`~/.vim/bundle/vundle/README.md`这个目录，则会自动克隆vundle插件，然后自动安装所需插件。
 
-**更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。
+**更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。或者自己比对一下``.vimrc``文件中的``Bundle "xxx/xxx"``的部分与``~/.vim/bundle/``目录下的异同，删掉不再使用的插件，然后在vim的命令模式执行```:BundleInstall```安装新加入的插件接客。
+
+**如果已经自己个性化过一些设置的话，需要备份自己的``.vimrc``文件，手工merge代码**
 
 
 使用的插件

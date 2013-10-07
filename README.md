@@ -28,7 +28,7 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 
 如果不存在``~/.vim/bundle/vundle/README.md``这个目录，则会自动克隆vundle插件，然后自动安装所需插件。
 
-**更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。或者自己比对一下``.vimrc``文件中的``Bundle "xxx/xxx"``的部分与``~/.vim/bundle/``目录下的异同，删掉不再使用的插件，然后在vim的命令模式执行```:BundleInstall```安装新加入的插件接客。
+**更新：**以后.vimrc文件有更新时，需要删除.vim目录，重新执行vim即可。或者自己比对一下``.vimrc``文件中的``Bundle "xxx/xxx"``的部分与``~/.vim/bundle/``目录下的异同，删掉不再使用的插件，然后在vim的命令模式执行```:BundleInstall```安装新加入的插件即可。
 
 **如果已经自己个性化过一些设置的话，需要备份自己的``.vimrc``文件，手工merge代码**
 
@@ -37,13 +37,12 @@ ubuntu系的系统使用如下命令即可:``sudo apt-get install exuberant-ctag
 ====
 一些重要的插件在.vimrc文件中的注释已经给出了文档的地址，如果需要帮助可以自己打开参考，这里只列出部分插件简介和使用方法。
 
-vim-powerline
+vim-airline
 ===
-一个华丽的vim状态栏，但是需要注意需要给字体打补丁才能显示出一些特殊符号，具体方法参考vim-powerline的github上的wiki。
-或者用我已经上传的字体，在``.font/Terminus Medium for Powerline.otf``。第一次使用在终端下敲命令``fc-cache -fv``强制更新下字体缓存，
-就可以在字体中找到``Terminus Medium for Powerline``这个字体了，设置终端字体为``Terminus Medium for Powerline``即可。
-
-**注意：**如果依旧看不到powerline的特殊字符效果，需要删除powerline的缓存重启vim。在vim的命令模式下执行``PowerlineClearCache``，重启vim，或者手工删除缓存文件``rm ~/.vim/bundle/vim-powerline/*.cache``，之后重启vim。
+一个华丽的vim状态栏，但是需要注意需要给字体打补丁才能显示出一些特殊符号，具体方法参考vim-airline的github上的wiki。
+直接执行installfont.sh脚本，会自动下载安装打过字符补丁的字体，然后设置自己喜欢的字体即可。
+**如果还是看不到字符效果，可以尝试使用``.font/Terminus Medium for Powerline.otf``这个字体。第一次使用在终端下敲命令``fc-cache -fv``强制更新下字体缓存，
+就可以在字体中找到``Terminus Medium for Powerline``这个字体了，设置终端字体为``Terminus Medium for Powerline``即可。**
 
 
 tagbar

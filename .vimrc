@@ -14,7 +14,8 @@ endif
 
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+ "帮助文档：https://github.com/bling/vim-airline
 Bundle 'majutsushi/tagbar'
  "帮助文档：https://github.com/majutsushi/tagbar
 Bundle 'rkulla/pydiction'
@@ -69,6 +70,7 @@ set mouse=a "打开鼠标操作功能
 set incsearch  "搜索时逐字符高亮
 set noexpandtab "不要用空格代替制表符
 colorscheme vividchalk "配色主题
+set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set ai
@@ -121,11 +123,10 @@ endif
 "}}
 
 "conf for plugins {{
-"powerline{
-set guifont=PowerlineSymbols\ for\ Powerline
-set nocompatible
-set t_Co=256
-let g:Powerline_symbols = 'fancy'
+"airline{
+  set t_Co=256
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
 "}
 
 "pydiction{{

@@ -114,7 +114,6 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "<PageUp>"
 if has( "gui_running" )
     set go=aAce
     set transparency=30
-    set guifont=Monaco:h13
     set showtabline=2
     set columns=140
     set lines=40

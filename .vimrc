@@ -17,13 +17,9 @@ endif
 Bundle 'bling/vim-airline'
  "帮助文档：https://github.com/bling/vim-airline
 Bundle 'majutsushi/tagbar'
- "帮助文档：https://github.com/majutsushi/tagbar
-Bundle 'rkulla/pydiction'
  "帮助文档：https://github.com/rkulla/pydiction
 Bundle 'ervandew/supertab'
  "帮助文档：https://github.com/ervandew/supertab
-Bundle "vim-scripts/AutoComplPop"
- "帮助文档：https://github.com/vim-scripts/AutoComplPop
 Bundle "scrooloose/nerdcommenter"
  "帮助文档：https://github.com/scrooloose/nerdcommenter
 Bundle "scrooloose/nerdtree"
@@ -37,8 +33,6 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
  "帮助文档：https://github.com/honza/vim-snippets
-Bundle "kevinw/pyflakes-vim"
- "帮助文档：https://github.com/kevinw/pyflakes-vim
 Bundle "vim-scripts/python_ifold"
  "python的折叠插件
 Bundle "sukima/xmledit"

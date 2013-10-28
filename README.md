@@ -6,6 +6,8 @@ vimrc
 相关技巧参考这个文档：http://linux-wiki.cn/wiki/zh-hans/%E9%85%8D%E7%BD%AE%E5%9F%BA%E4%BA%8EVim%E7%9A%84Python%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83
 比如补全怎么用，跳转怎么用等等。
 
+有关YCM插件相关的用法及配置参考这个帖子：http://tieba.baidu.com/p/2672605209
+
 还有这篇参考资料，可以看看一些常用的快捷键，看看怎么跳转代码：http://blog.csdn.net/jiayouxjh/article/details/8621279
 
 vim技巧，推荐阅读：http://www.cnblogs.com/xiaochaohuashengmi/archive/2011/10/14/2211248.html

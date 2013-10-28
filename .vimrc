@@ -18,12 +18,6 @@ Bundle 'bling/vim-airline'
  "帮助文档：https://github.com/bling/vim-airline
 Bundle 'majutsushi/tagbar'
  "帮助文档：https://github.com/majutsushi/tagbar
-Bundle 'rkulla/pydiction'
- "帮助文档：https://github.com/rkulla/pydiction
-Bundle 'ervandew/supertab'
- "帮助文档：https://github.com/ervandew/supertab
-Bundle "vim-scripts/AutoComplPop"
- "帮助文档：https://github.com/vim-scripts/AutoComplPop
 Bundle "scrooloose/nerdcommenter"
  "帮助文档：https://github.com/scrooloose/nerdcommenter
 Bundle "scrooloose/nerdtree"
@@ -34,9 +28,6 @@ Bundle "mattn/emmet-vim"
  "帮助文档：https://github.com/mattn/emmet-vim
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
- "帮助文档：https://github.com/honza/vim-snippets
 Bundle "kevinw/pyflakes-vim"
  "帮助文档：https://github.com/kevinw/pyflakes-vim
 Bundle "vim-scripts/python_ifold"
@@ -44,6 +35,12 @@ Bundle "vim-scripts/python_ifold"
 Bundle "sukima/xmledit"
  "vim的xml编辑插件"
 Bundle "tpope/vim-vividchalk"
+Bundle "Valloric/YouCompleteMe"
+ "YCM,强大的补全插件，替换掉AutoComplPop,文档：https://github.com/Valloric/YouCompleteMe
+Bundle "SirVer/ultisnips"
+ "snipmate的改良版本，替换掉snipmate插件
+Bundle "scrooloose/syntastic"
+ "非常强的语法检测插件，依赖于一些特殊命令，具体参考官方文档：https://github.com/scrooloose/syntastic
 
 filetype on
 filetype plugin indent on     " required!
@@ -128,9 +125,6 @@ endif
   let g:airline#extensions#tabline#enabled = 1
 "}
 
-"pydiction{{
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-"}}
 
 "tagbar{
 "映射F4为:TagbarToggle
@@ -140,10 +134,6 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 let g:tagbar_width = 40
 "}
 "}}
-
-"AutoComplPop{
-let g:acp_completeoptPreview = 1
-"}
 
 "vim的多标签编辑快捷键映射{
 map <C-l> :tabn<cr>             
@@ -165,7 +155,23 @@ map <F3> <plug>NERDTreeTabsToggle <CR>
 "设置打开目录树的快捷键
 "}
 
-"snipmate{
-"映射ctrl+z为snimate补全
-imap <C-z> <Plug>snipMateNextOrTrigger
+"YCM与ultrisnips联合工作{
+function! g:UltiSnips_Complete()
+    call UltiSnips_ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips_JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
 "}

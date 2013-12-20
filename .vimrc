@@ -45,7 +45,6 @@ Bundle "sukima/xmledit"
  "vim的xml编辑插件"
 Bundle "tpope/vim-vividchalk"
 
-filetype on
 filetype plugin indent on     " required!
  "
  " Brief help
@@ -68,7 +67,6 @@ endif
 syn on  "高亮语法
 set mouse=a "打开鼠标操作功能
 set incsearch  "搜索时逐字符高亮
-set noexpandtab "不要用空格代替制表符
 colorscheme vividchalk "配色主题
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
@@ -89,7 +87,6 @@ set autoindent "自动缩进
 set smartindent "智能缩进
 set hls "高亮所有搜索匹配到的结果
 set foldmethod=syntax
-filetype plugin indent on
 set ruler
 set showcmd
 set tags=tags;/
@@ -98,7 +95,7 @@ set completeopt+=longest
  "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "设置编辑html,htm,css,js等网页文件的时候缩进字符为2个
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2
 set completeopt+=menu
 set wildmenu
 set omnifunc=syntaxcomplete#Complete

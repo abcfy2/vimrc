@@ -127,12 +127,16 @@ map <F3> <plug>NERDTreeTabsToggle <CR>
 ultisnips
 =
 使用``ctrl+j``触发ultisnipts片段补全
-    let g:UltiSnips = {}
-    let g:UltiSnips.always_use_first_snippet = 1
-    let g:UltiSnips.ExpandTrigger = '<c-j>'
-    let g:UltiSnips.ListSnippets = '<c-r><tab>'
-    let g:UltiSnips.JumpForwardTrigger = '<tab>'
-    let g:UltiSnips.JumpBackwardTrigger = '<s-tab>'
-
+```
+        let g:UltiSnips = {}
+        let g:UltiSnips.always_use_first_snippet = 1
+        let g:UltiSnips.ExpandTrigger = '<c-j>'
+        let g:UltiSnips.ListSnippets = '<c-r><tab>'
+        let g:UltiSnips.JumpForwardTrigger = '<tab>'
+        let g:UltiSnips.JumpBackwardTrigger = '<s-tab>'
+```
 
 在插入模式下，使用CTRL+J即可实现UltriSnips补全。
+
+自动跳转到上次光标所在处
+=

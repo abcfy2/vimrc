@@ -41,9 +41,8 @@ vim-airline
 ===
 一个华丽的vim状态栏，但是需要注意需要给字体打补丁才能显示出一些特殊符号，具体方法参考vim-airline的github上的wiki。
 直接执行installfont.sh脚本，会自动下载安装打过字符补丁的字体，然后设置自己喜欢的字体即可。
-**如果还是看不到字符效果，可以尝试使用``.font/Terminus Medium for Powerline.otf``这个字体。第一次使用在终端下敲命令``fc-cache -fv``强制更新下字体缓存，
-就可以在字体中找到``Terminus Medium for Powerline``这个字体了，设置终端字体为``Terminus Medium for Powerline``即可。**
-
+**如果还是看不到字符效果，可以尝试使用``.font``目录下提供的字体。第一次使用在终端下敲命令``fc-cache -fv``强制更新下字体缓存，
+终端字体选用.font目录下提供的字体即可，或者自己参考powerline的帮助文档，自己给字体打补丁或者选用自己喜欢的打过补丁的字体。**
 
 tagbar
 ===
@@ -55,9 +54,9 @@ pydiction
 python的一个字典补全插件，直接在编写python代码中可以实现tab键补全的功能。
 
 
-AutoComplPop
+YouCompleteMe
 ===
-一个类似与IDE的关键字补全插件，敲代码的时候可以在代码下方弹出相关的候选项。
+vim神级补全插件，这个插件需要编译方可使用，否则启动vim会报错，强烈建议先读官方文档编译这个插件：https://github.com/Valloric/YouCompleteMe
 
 
 nerdcommenter
@@ -125,13 +124,15 @@ NERDTreeTabs
 映射F3为打开/关闭文件树
 map <F3> <plug>NERDTreeTabsToggle <CR>
 
-snipmate
+ultisnips
 =
-由于与pythondict插件和supertab插件冲突，tab键补全会失效，因此改为CTRL+Z来补全
+使用``ctrl+j``触发ultisnipts片段补全
+    let g:UltiSnips = {}
+    let g:UltiSnips.always_use_first_snippet = 1
+    let g:UltiSnips.ExpandTrigger = '<c-j>'
+    let g:UltiSnips.ListSnippets = '<c-r><tab>'
+    let g:UltiSnips.JumpForwardTrigger = '<tab>'
+    let g:UltiSnips.JumpBackwardTrigger = '<s-tab>'
 
-``imap <C-z> <Plug>snipMateNextOrTrigger``
 
-在插入模式下，使用CTRL+Z即可实现simpmate补全。
-
-**注意:**需要注意的是，可能受``AutoComplPop``插件的影响，直接ctrl+z可能不能补全，比如C代码中,for敲出来的时候下方会有自动匹配的可选项，需要按一次方向键右``→``，没有匹配项的时候再按``ctrl+z``才可以完成匹配。
-
+在插入模式下，使用CTRL+J即可实现UltriSnips补全。

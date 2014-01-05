@@ -14,16 +14,13 @@ endif
 
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
+Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
  "帮助文档：https://github.com/bling/vim-airline
 Bundle 'majutsushi/tagbar'
  "帮助文档：https://github.com/majutsushi/tagbar
 Bundle 'rkulla/pydiction'
  "帮助文档：https://github.com/rkulla/pydiction
-Bundle 'ervandew/supertab'
- "帮助文档：https://github.com/ervandew/supertab
-Bundle "vim-scripts/AutoComplPop"
- "帮助文档：https://github.com/vim-scripts/AutoComplPop
 Bundle "scrooloose/nerdcommenter"
  "帮助文档：https://github.com/scrooloose/nerdcommenter
 Bundle "scrooloose/nerdtree"
@@ -35,6 +32,7 @@ Bundle "mattn/emmet-vim"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
+Bundle "MarcWeber/ultisnips"
 Bundle "honza/vim-snippets"
  "帮助文档：https://github.com/honza/vim-snippets
 Bundle "kevinw/pyflakes-vim"
@@ -44,6 +42,10 @@ Bundle "vim-scripts/python_ifold"
 Bundle "sukima/xmledit"
  "vim的xml编辑插件"
 Bundle "tpope/vim-vividchalk"
+Bundle 'Valloric/YouCompleteMe'
+ "神级补全插件YCM，强烈建议使用前先读文档
+ "https://github.com/Valloric/YouCompleteMe
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on     " required!
  "
@@ -162,7 +164,18 @@ map <F3> <plug>NERDTreeTabsToggle <CR>
 "设置打开目录树的快捷键
 "}
 
-"snipmate{
-"映射ctrl+z为snimate补全
-imap <C-z> <Plug>snipMateNextOrTrigger
+"UltiSnips{
+let g:UltiSnips = {}
+let g:UltiSnips.always_use_first_snippet = 1
+let g:UltiSnips.ExpandTrigger = '<c-j>'
+let g:UltiSnips.ListSnippets = '<c-r><tab>'
+let g:UltiSnips.JumpForwardTrigger = '<tab>'
+let g:UltiSnips.JumpBackwardTrigger = '<s-tab>'
+"}
+
+"自动跳转到上一次光标的位置{
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 "}

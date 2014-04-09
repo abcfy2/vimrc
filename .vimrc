@@ -65,6 +65,11 @@ if iCanHazVundle == 0
 endif
 "}}
 
+"解决vim乱码{{
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+"}}
 "common conf {{
 syn on  "高亮语法
 set mouse=a "打开鼠标操作功能

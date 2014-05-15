@@ -29,12 +29,11 @@ Bundle "jistr/vim-nerdtree-tabs"
  "帮助文档：https://github.com/jistr/vim-nerdtree-tabs
 Bundle "mattn/emmet-vim"
  "帮助文档：https://github.com/mattn/emmet-vim
-Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "MarcWeber/ultisnips"
+Bundle "SirVer/ultisnips"
 Bundle "honza/vim-snippets"
  "帮助文档：https://github.com/honza/vim-snippets
+Bundle "MarcWeber/vim-addon-manager"
 Bundle "kevinw/pyflakes-vim"
  "帮助文档：https://github.com/kevinw/pyflakes-vim
 Bundle "vim-scripts/python_ifold"
@@ -170,12 +169,9 @@ map <F3> <plug>NERDTreeTabsToggle <CR>
 "}
 
 "UltiSnips{
-let g:UltiSnips = {}
-let g:UltiSnips.always_use_first_snippet = 1
-let g:UltiSnips.ExpandTrigger = '<c-j>'
-let g:UltiSnips.ListSnippets = '<c-r><tab>'
-let g:UltiSnips.JumpForwardTrigger = '<tab>'
-let g:UltiSnips.JumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "}
 
 "自动跳转到上一次光标的位置{

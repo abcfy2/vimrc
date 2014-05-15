@@ -172,6 +172,7 @@ map <F3> <plug>NERDTreeTabsToggle <CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 "}
 
 "自动跳转到上一次光标的位置{

@@ -45,6 +45,8 @@ Bundle 'Valloric/YouCompleteMe'
  "神级补全插件YCM，强烈建议使用前先读文档
  "https://github.com/Valloric/YouCompleteMe
 Bundle 'scrooloose/syntastic'
+ "缩进线插件
+Bundle "Yggdroot/indentLine"
 
 filetype plugin indent on     " required!
  "
@@ -73,7 +75,9 @@ set encoding=utf-8
 syn on  "高亮语法
 set mouse=a "打开鼠标操作功能
 set incsearch  "搜索时逐字符高亮
-colorscheme vividchalk "配色主题
+colorscheme desert "配色主题
+set cursorline
+hi CursorLine ctermbg=236
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 set helplang=cn
@@ -85,7 +89,6 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-set cursorline
 set number
 set autoread
 set ignorecase

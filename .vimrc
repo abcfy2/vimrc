@@ -104,7 +104,7 @@ set completeopt+=longest
  "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "设置编辑html,htm,css,js等网页文件的时候缩进字符为2个
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set completeopt+=menu
 set wildmenu
 set omnifunc=syntaxcomplete#Complete
